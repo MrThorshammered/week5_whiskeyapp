@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Whiskey.net</title>
+  <link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="/css/reset.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="/">Whiskey.net</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/whiskeys">Whiskeys</a></li>
+        <li><a href="/whiskeys/new">Add Whiskey</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%= yield %>
+  </main>
+  <footer>
+    &copy; Whiskey.net
+  </footer>
+</body>
+</html>

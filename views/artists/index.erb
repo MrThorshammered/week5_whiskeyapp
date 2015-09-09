@@ -1,0 +1,32 @@
+<h2>Whiskeys</h2>
+
+<a class="btn" href="/whiskeys/new">Add Whiskey</a>
+
+<div class="Whiskeys">
+  <% @Whiskeys.each do |whiskey| %>
+  <div class="row">
+    <img src="<%= whiskey.photo_url %>" alt="<%= whiskey.name %> photo">
+    <ul>
+      <li>
+        <h2>
+          <a href="/whiskeys/<%= whiskey.id %>">
+            <%= whiskey.name %>
+          </a>
+        </h2>
+      </li>
+      <li>
+        <a href="/whiskeys/<%= whiskey.id %>/edit">
+          Edit
+        </a>
+      </li>
+      <li>
+        <li>
+          <form method="/whiskeys/<%= whiskey.id %>/delete" action="post">
+            <button>Delete</button>
+          </form>
+        </li>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+</div>
