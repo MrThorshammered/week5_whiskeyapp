@@ -1,4 +1,4 @@
-class Whiskey < Sinatra::Base
+class Whiskeys < Sinatra::Base
 
   # General route actions
   get '/' do
@@ -28,20 +28,20 @@ class Whiskey < Sinatra::Base
     if @whiskey.save
       redirect("/whiskeys/#{@whiskey.id}")
     else
-      erb(:"whiskeys/new")
+      erb(:"whiskey/new")
     end
   end
 
   # show
   get '/whiskeys/:id' do
     @whiskey = Whiskey.find(params[:id])
-    erb(:"whiskeys/show")
+    erb(:"whiskey/show")
   end
 
   # edit
   get '/whiskeys/:id/edit' do
     @whiskey = Whiskey.find(params[:id])
-    erb(:"whiskeys/edit")
+    erb(:"whiskey/edit")
   end
 
   # update
@@ -50,7 +50,7 @@ class Whiskey < Sinatra::Base
     if @whiskey.update_attributes(params[:whiskey])
       redirect("/whiskeys/#{whiskey.id}")
     else
-      erb(:"whiskeys/edit")
+      erb(:"whiskey/edit")
     end
   end
 

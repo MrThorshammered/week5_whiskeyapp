@@ -7,4 +7,4 @@ require './models/whiskey'
 require './app'
 
 
-run Whiskey
+run Whiskeys
