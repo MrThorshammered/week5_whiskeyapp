@@ -28,20 +28,20 @@ class Whiskeys < Sinatra::Base
     if @whiskey.save
       redirect("/whiskeys/#{@whiskey.id}")
     else
-      erb(:"whiskey/new")
+      erb(:"whiskeys/new")
     end
   end
 
   # show
   get '/whiskeys/:id' do
     @whiskey = Whiskey.find(params[:id])
-    erb(:"whiskey/show")
+    erb(:"whiskeys/show")
   end
 
   # edit
   get '/whiskeys/:id/edit' do
     @whiskey = Whiskey.find(params[:id])
-    erb(:"whiskey/edit")
+    erb(:"whiskeys/edit")
   end
 
   # update
@@ -50,7 +50,7 @@ class Whiskeys < Sinatra::Base
     if @whiskey.update_attributes(params[:whiskey])
       redirect("/whiskeys/#{whiskey.id}")
     else
-      erb(:"whiskey/edit")
+      erb(:"whiskeys/edit")
     end
   end
 
