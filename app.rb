@@ -24,8 +24,8 @@ class Whiskeys < Sinatra::Base
 
   # create
   post '/whiskeys' do
-    @whiskey = Whiskey.new(params[:whiskey])
-    if @whiskey.save
+    @whiskeys = Whiskey.new(params[:whiskey])
+    if @whiskeys.save
       redirect("/whiskeys/#{@whiskey.id}")
     else
       erb(:"whiskeys/new")
@@ -34,30 +34,30 @@ class Whiskeys < Sinatra::Base
 
   # show
   get '/whiskeys/:id' do
-    @whiskey = Whiskey.find(params[:id])
+    @whiskeys = Whiskey.find(params[:id])
     erb(:"whiskeys/show")
   end
 
   # edit
   get '/whiskeys/:id/edit' do
-    @whiskey = Whiskey.find(params[:id])
+    @whiskeys = Whiskey.find(params[:id])
     erb(:"whiskeys/edit")
   end
 
   # update
-  put '/whiskeys/:id' do
-    @whiskey = Whiskey.find(params[:id])
-    if @whiskey.update_attributes(params[:whiskey])
-      redirect("/whiskeys/#{whiskey.id}")
+  post '/whiskeys/:id' do
+    @whiskeys = Whiskey.find(params[:id])
+    if @whiskeys.update_attributes(params[:whiskey])
+      redirect("/whiskeys/#{@whiskeys.id}")
     else
       erb(:"whiskeys/edit")
     end
   end
 
   # delete
-  delete '/whiskeys/:id/delete' do
-    @whiskey = Whiskey.find(params[:id])
-    if @whiskey.destroy
+  post '/whiskeys/:id/delete' do
+    @whiskeys = Whiskey.find(params[:id])
+    if @whiskeys.destroy
       redirect('/whiskeys')
     else
       redirect("/whiskeys/#{@whiskey.id}")
