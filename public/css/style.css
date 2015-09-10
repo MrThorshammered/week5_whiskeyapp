@@ -1,7 +1,7 @@
 body {
   font-family: 'Slabo 27px', serif;
   line-height: 1.5;
-  background: #f1f4f6;
+  background-color: #D68330;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -10,15 +10,16 @@ h1,h2,h3,h4,h5,h6 {
 
 h1, h2 {
   font-size: 30px;
+  color: #4C3108;
 }
 
 a {
-  color: #000;
+  color: #FFA319;
 }
 
 header {
   width: 100%;
-  background: black;
+  background: #2B1A0A;
 }
 
 header nav { 
@@ -104,7 +105,7 @@ main ul {
 .songs .row ul li button {
 .artists .row ul li a,
 .artists .row ul li button {
-  color: black;
+  color: #FFB84D;
   background:none!important;
   border:none; 
   padding:0!important;
@@ -128,7 +129,7 @@ input[type=submit],
   text-transform: uppercase;
   font-weight: 700;
   width: 305px;
-  color: #535454;
+  color: #FFB84D;
   text-decoration: none;
   display: block;
   margin-bottom: 20px;
